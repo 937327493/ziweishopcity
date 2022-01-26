@@ -1,0 +1,14 @@
+spring:
+  application:
+    name: ziweishopcity-third-party
+  cloud:
+    nacos:
+      config:
+        ext-config[0]:
+          data-id: ziweishopcity-third-party.yaml
+          group: DEFAULT_GROUP
+          refresh: true
+        server-addr: 127.0.0.1:8848
+        namespace: 48d3e3ca-1d9d-43a6-9ee6-d17ad667fef3
+
+

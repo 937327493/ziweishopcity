@@ -1,0 +1,9 @@
+spring:
+  application:
+    name: ziweishopcity-coupon
+  cloud:
+    nacos:
+      config:
+        server-addr: 127.0.0.1:8848
+        namespace: 63460f4d-56c7-4c6a-9288-5c768afd7ce1
+#        file-extension: yaml

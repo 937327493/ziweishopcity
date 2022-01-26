@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8"/>
+    <title></title>
+    <script type="text/javascript" src="http://cart.ziweishopcity.com/cart/js/jquery-3.1.1.min.js"></script>
+    <script type="text/javascript" src="http://cart.ziweishopcity.com/cart/bootstrap/js/bootstrap.js"></script>
+    <script type="text/javascript" src="http://cart.ziweishopcity.com/cart/js/swiper.min.js"></script>
+    <script src="http://cart.ziweishopcity.com/cart/js/swiper.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="http://cart.ziweishopcity.com/cart/css/swiper.min.css"/>
+    <link rel="stylesheet" type="text/css" href="http://cart.ziweishopcity.com/cart/bootstrap/css/bootstrap.css"/>
+    <link rel="stylesheet" type="text/css" href="http://cart.ziweishopcity.com/cart/css/success.css"/>
+
+</head>
+
+<body>
+<!--头部-->
+<div class="alert-info">
+    <div class="hd_wrap_top">
+        <ul class="hd_wrap_left">
+            <li class="hd_home"><i class="glyphicon glyphicon-home"></i>
+                <a href="/javascript:;">谷粒商城首页</a>
+            </li>
+
+        </ul>
+
+        <ul class="hd_wrap_right">
+            <li>
+                <a href="http://127.0.0.1:9000/login.html"
+                   th:if="${session.loginUser == null}">你好，请登录</a>
+                <a href="http://127.0.0.1:9000/login.html"
+                   th:if="${session.loginUser != null}">[[${session.loginUser}]]</a>
+            </li>
+            <li>
+                <a href="http://127.0.0.1:9000/reg.html" class="li_2"
+                   th:if="${session.loginUser == null}">免费注册</a>
+            </li>
+            <span>|</span>
+
+            <li>
+                <a href="/javascript:;">我的订单</a>
+            </li>
+
+
+        </ul>
+
+    </div>
+</div>
+
+<div class="nav-tabs-justified">
+    <div class="nav_wrap">
+
+        <div class="nav_top">
+            <div class="nav_top_one">
+                <a href="/#"><img src="http://cart.ziweishopcity.com/cart/img/logo1.jpg"
+                                  style="height: 60px;width:180px;"/></a>
+            </div>
+            <div class="nav_top_two"><input type="text"/>
+                <button>搜索</button>
+            </div>
+
+
+        </div>
+
+    </div>
+</div>
+
+<div class="main">
+
+    <div class="success-wrap">
+        <div class="w" id="result">
+            <div class="m succeed-box">
+                <div class="mc success-cont">
+                    <div class="success-lcol">
+                        <div class="success-top" th:if="${orderSn != null}"><b class="succ-icon"></b>
+                            <h3 class="ftx-02">恭喜，商品秒杀成功！！订单为 [[${orderSn}]]</h3>
+                            <a style="color: red"
+                               th:href="${'http://order.ziweishopcity.com/orderPay?orderSn='+orderSn}">立刻支付</a>
+                        </div>
+                        <div class="success-top" th:if="${orderSn == null}"><b class="succ-icon"></b>
+                            <h3 class="ftx-02">真是抱歉，手速慢了，下次再来吧</h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+</body>
+<script type="text/javascript" src="http://cart.ziweishopcity.com/cart/js/success.js"></script>
+
+</html>

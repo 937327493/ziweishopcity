@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>com.wzw</groupId>
+    <artifactId>ziweishopcity</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+    <name>ziweishopcity</name>
+    <description>聚合模块</description>
+    <packaging>pom</packaging>
+
+    <modules>
+        <module>ziweishopcity-member</module>
+        <module>ziweishopcity-order</module>
+        <module>ziweishopcity-product</module>
+        <module>ziweishopcity-ware</module>
+        <module>ziweishopcity-coupon</module>
+        <module>renren-generator</module>
+        <module>renren-fast</module>
+        <module>common</module>
+        <module>ziweishopcity-gateway</module>
+        <module>ziweishopcity-third-party</module>
+        <module>ziweishopcity-search</module>
+        <module>ziweishopcity-auth-server</module>
+        <module>ziweishopcity-cart</module>
+        <module>ziweishopcity-seckill</module>
+    </modules>
+</project>

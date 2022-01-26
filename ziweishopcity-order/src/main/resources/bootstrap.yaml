@@ -1,0 +1,9 @@
+spring:
+  application:
+    name: ziweishopcity-order
+  cloud:
+    nacos:
+      config:
+        server-addr: 127.0.0.1:8848
+        namespace: 0240ad61-2114-45aa-9efb-ba80e201750c
+#        file-extension: yaml

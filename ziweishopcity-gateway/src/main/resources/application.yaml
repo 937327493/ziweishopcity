@@ -1,0 +1,83 @@
+server:
+  port: 88
+spring:
+  application:
+    name: ziweishopcity-gateway
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 127.0.0.1:8848
+    gateway:
+      routes:
+        - id: ware_route
+          uri: lb://ziweishopcity-ware
+          predicates:
+            - Path=/api/ware/**
+          filters:
+            - RewritePath=/api/(?<segment>.*),/$\{segment}
+        - id: coupon_route
+          uri: lb://ziweishopcity-coupon
+          predicates:
+            - Path=/api/coupon/**
+          filters:
+            - RewritePath=/api/(?<segment>.*),/$\{segment}
+        - id: member_route
+          uri: lb://ziweishopcity-member
+          predicates:
+            - Path=/api/member/**
+          filters:
+            - RewritePath=/api/(?<segment>.*),/$\{segment}
+        - id: third_party_route
+          uri: lb://ziweishopcity-third-party
+          predicates:
+            - Path=/api/thirdparty/**
+          filters:
+            - RewritePath=/api/thirdparty/(?<segment>.*),/$\{segment}
+        - id: product_route
+          uri: lb://ziweishopcity-product
+          predicates:
+            - Path=/api/product/**
+          filters:
+            - RewritePath=/api/(?<segment>.*),/$\{segment}
+        - id: admin_route
+          uri: lb://renren-fast
+          predicates:
+            - Path=/api/**
+          filters:
+            - RewritePath=/api/(?<segment>.*),/renren-fast/$\{segment}
+        - id: ziweishopcity_host_route
+          uri: lb://ziweishopcity-product
+          predicates:
+            - Host=ziweishopcity.com,item.ziweishopcity.com
+        - id: ziweishopcity_search_route
+          uri: lb://ziweishopcity-search
+          predicates:
+            - Host=search.ziweishopcity.com
+        - id: ziweishopcity_auth_route
+          uri: lb://ziweishopcity-auth-server
+          predicates:
+            - Host=auth.ziweishopcity.com
+        - id: ziweishopcity_cart_route
+          uri: lb://ziweishopcity-cart
+          predicates:
+            - Host=cart.ziweishopcity.com
+        - id: ziweishopcity_order_route
+          uri: lb://ziweishopcity-order
+          predicates:
+            - Host=order.ziweishopcity.com
+        - id: ziweishopcity_member_route
+          uri: lb://ziweishopcity-member
+          predicates:
+            - Host=member.ziweishopcity.com
+        - id: ziweishopcity_seckill_route
+          uri: lb://ziweishopcity-seckill
+          predicates:
+            - Host=seckill.ziweishopcity.com
+      globalcors:
+        cors-configurations:
+          '[/**]':
+            allowed-origins: "*"
+            allowed-headers: "*"
+            allowed-methods: "*"
+            allow-credentials: true
+            max-age: 3600

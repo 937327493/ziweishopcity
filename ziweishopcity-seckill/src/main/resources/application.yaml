@@ -1,0 +1,27 @@
+spring:
+  application:
+    name: ziweishopcity-seckill
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 127.0.0.1:8848
+  task:
+    execution:
+      pool:
+        core-size: 5
+        max-size: 12
+  session:
+    store-type: redis
+  thymeleaf:
+    cache: false
+redis:
+  host: 192.168.71.128
+  port: 6379
+  database: 0
+server:
+  port: 8900
+rocketmq:
+  name-server: 192.168.71.128:9876
+  producer:
+    group: seckill-producer-group
+

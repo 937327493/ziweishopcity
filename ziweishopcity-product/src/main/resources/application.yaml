@@ -1,0 +1,38 @@
+server:
+  port: 8004
+  servlet:
+    session:
+      timeout: 30m
+spring:
+  application:
+    name: ziweishopcity-product
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: root
+    password: root
+    url: jdbc:mysql://192.168.71.128:3306/ziweishopcity_pms?serverTimezone=GMT%2B8
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 127.0.0.1:8848
+  jackson:
+    date-format: yyyy-MM-dd HH:mm:ss
+  thymeleaf:
+    cache: false
+  redis:
+    database: 0
+    host: 192.168.71.128
+    port: 6379
+  session:
+    store-type: redis
+mybatis-plus:
+  mapper-locations:
+    classpath: /mapper/**/*.xml
+  global-config:
+    db-config:
+      id-type: auto
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+logging:
+  level:
+    root: info
